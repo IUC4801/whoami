@@ -1,85 +1,115 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Folder } from "lucide-react";
 
-const projects = [
+const featuredProjects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern online shopping experience with seamless checkout and inventory management.",
-    tags: ["React", "Node.js", "Stripe"],
-    color: "from-amber-500/20 to-orange-500/20",
+    title: "AI Threat Detection System",
+    description: "Real-time security monitoring platform using machine learning to detect and classify network threats. Reduced false positives by 40% using custom-trained anomaly detection models.",
+    tags: ["Python", "TensorFlow", "Kafka", "Elasticsearch"],
+    github: "#",
+    live: "#",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Real-time data visualization platform for business intelligence and insights.",
-    tags: ["TypeScript", "D3.js", "PostgreSQL"],
-    color: "from-blue-500/20 to-cyan-500/20",
+    title: "Secure Code Analyzer",
+    description: "Static analysis tool that scans codebases for security vulnerabilities using NLP-based pattern recognition. Integrated with CI/CD pipelines for automated security checks.",
+    tags: ["Go", "AST Parsing", "Docker", "GitHub Actions"],
+    github: "#",
+    live: "#",
   },
   {
-    title: "Social Media App",
-    description: "Connect and share with a beautifully designed social networking platform.",
-    tags: ["React Native", "Firebase", "GraphQL"],
-    color: "from-purple-500/20 to-pink-500/20",
+    title: "Privacy-Preserving ML Framework",
+    description: "Framework for training machine learning models on encrypted data using homomorphic encryption. Enables secure collaborative learning without exposing sensitive data.",
+    tags: ["Rust", "PyTorch", "Cryptography", "WebAssembly"],
+    github: "#",
+    live: "#",
   },
-  {
-    title: "AI Content Generator",
-    description: "Leverage artificial intelligence to create compelling content at scale.",
-    tags: ["Python", "OpenAI", "FastAPI"],
-    color: "from-emerald-500/20 to-teal-500/20",
-  },
+];
+
+const otherProjects = [
+  { title: "Auth0 Alternative", desc: "Self-hosted authentication system", tags: ["Node.js", "JWT"] },
+  { title: "CVE Dashboard", desc: "Real-time vulnerability tracker", tags: ["React", "API"] },
+  { title: "LLM Security Suite", desc: "Prompt injection detector", tags: ["Python", "LLM"] },
+  { title: "Container Scanner", desc: "Docker image vulnerability scanner", tags: ["Go", "Trivy"] },
 ];
 
 const Projects = () => {
   return (
-    <section id="work" className="py-32 px-6 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">
-            Selected Work
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
-            Projects I'm
-            <span className="text-gradient"> proud </span>
-            of
-          </h2>
+    <section id="projects" className="py-32 px-6 bg-secondary/20">
+      <div className="container mx-auto max-w-5xl">
+        <div className="flex items-center gap-4 mb-12">
+          <span className="font-mono text-primary">04.</span>
+          <h2 className="text-3xl md:text-4xl font-bold">Projects</h2>
+          <div className="flex-1 h-px bg-border" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+        {/* Featured Projects */}
+        <div className="space-y-24 mb-24">
+          {featuredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-500"
+              className={`relative grid md:grid-cols-12 gap-4 items-center ${
+                index % 2 === 0 ? "" : "md:text-right"
+              }`}
             >
-              {/* Gradient background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              <div className="relative p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <h3 className="font-display text-2xl font-bold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button className="p-2 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-                      <Github className="w-4 h-4" />
-                    </button>
-                    <button className="p-2 bg-muted rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
+              {/* Project Image Placeholder */}
+              <div className={`md:col-span-7 ${index % 2 === 0 ? "" : "md:col-start-6"}`}>
+                <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 rounded border border-border relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-[linear-gradient(hsl(180_100%_50%/0.05)_1px,transparent_1px),linear-gradient(90deg,hsl(180_100%_50%/0.05)_1px,transparent_1px)] bg-[size:20px_20px]" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-mono text-muted-foreground text-sm">{`<${project.title.split(' ')[0]} />`}</span>
                   </div>
                 </div>
-                
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
+              </div>
+
+              {/* Project Info */}
+              <div className={`md:col-span-6 md:absolute ${index % 2 === 0 ? "md:right-0 md:text-right" : "md:left-0 md:text-left"}`}>
+                <p className="font-mono text-primary text-sm mb-2">Featured Project</p>
+                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                <div className="p-6 bg-card border border-border rounded shadow-lg mb-4">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                <div className={`flex flex-wrap gap-2 mb-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs font-medium bg-muted rounded-full text-muted-foreground"
-                    >
+                    <span key={tag} className="font-mono text-xs text-muted-foreground">
                       {tag}
                     </span>
                   ))}
                 </div>
+                <div className={`flex gap-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                  <a href={project.github} className="text-foreground hover:text-primary transition-colors">
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a href={project.live} className="text-foreground hover:text-primary transition-colors">
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Other Projects */}
+        <h3 className="text-xl font-bold text-center mb-8">Other Noteworthy Projects</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          {otherProjects.map((project) => (
+            <div
+              key={project.title}
+              className="group p-6 border border-border hover:border-primary/30 bg-card rounded transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <Folder className="w-10 h-10 text-primary" />
+                <div className="flex gap-3">
+                  <Github className="w-4 h-4 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                </div>
+              </div>
+              <h4 className="font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h4>
+              <p className="text-sm text-muted-foreground mb-4">{project.desc}</p>
+              <div className="flex gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="font-mono text-xs text-muted-foreground">{tag}</span>
+                ))}
               </div>
             </div>
           ))}
