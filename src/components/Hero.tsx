@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, FileDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -76,6 +76,15 @@ const Hero = () => {
               Explore My Work
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </button>
+            
+            <a
+              href="/resume.pdf"
+              download="YourName_Resume.pdf"
+              className="group flex items-center gap-2 border border-primary text-primary px-6 py-3 font-mono text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:glow-sm"
+            >
+              <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+              Resume
+            </a>
             
             <div className="flex items-center gap-4">
               {[
