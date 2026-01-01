@@ -14,7 +14,7 @@ const Navigation = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const navItems = ["About", "Skills", "Experience", "Projects", "Contact"];
+  const navItems = ["About", "Skills", "Experience", "Projects", "Achievements", "Contact"];
 
   return (
     <nav
