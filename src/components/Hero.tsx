@@ -1,8 +1,10 @@
 import { ArrowDown, Github, Linkedin, Mail, FileDown } from "lucide-react";
 import { useEffect, useState } from "react";
+
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "Software Engineer | Cybersecurity | AI";
+  
   useEffect(() => {
     let i = 0;
     const timer = setInterval(() => {
@@ -15,87 +17,90 @@ const Hero = () => {
     }, 50);
     return () => clearInterval(timer);
   }, []);
+
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth"
-    });
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
-  return <section id="hero" className="min-h-screen flex flex-col justify-center relative px-6 overflow-hidden">
+
+  return (
+    <section id="hero" className="min-h-screen flex flex-col justify-center relative px-4 sm:px-6 overflow-hidden pt-20 md:pt-0">
       {/* Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(180_100%_50%/0.03)_1px,transparent_1px),linear-gradient(90deg,hsl(180_100%_50%/0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(hsl(180_100%_50%/0.03)_1px,transparent_1px),linear-gradient(90deg,hsl(180_100%_50%/0.03)_1px,transparent_1px)] bg-[size:40px_40px] sm:bg-[size:60px_60px]" />
       
-      {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[150px]" />
+      {/* Glow orbs - adjusted for mobile */}
+      <div className="absolute top-1/4 left-0 sm:left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-primary/5 rounded-full blur-[100px] sm:blur-[150px]" />
+      <div className="absolute bottom-1/4 right-0 sm:right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-accent/5 rounded-full blur-[100px] sm:blur-[150px]" />
 
       <div className="container mx-auto max-w-5xl z-10">
-        <div className="space-y-6">
-          <p className="font-mono text-primary animate-fade-up" style={{
-          animationDelay: "0.1s"
-        }}>Hello, World! I'm </p>
+        <div className="space-y-4 sm:space-y-6">
+          <p className="font-mono text-primary text-sm sm:text-base animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            Hello, World! I'm
+          </p>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight animate-fade-up" style={{
-          animationDelay: "0.2s"
-        }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <span className="text-foreground">Ayushi Chaudhuri</span>
           </h1>
           
-          <div className="flex items-center gap-2 animate-fade-up" style={{
-          animationDelay: "0.3s"
-        }}>
-            <span className="font-mono text-xl md:text-2xl text-muted-foreground">
+          <div className="flex items-center gap-2 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <span className="font-mono text-base sm:text-xl md:text-2xl text-muted-foreground">
               {displayText}
             </span>
-            <span className="w-3 h-6 bg-primary animate-pulse" />
+            <span className="w-2 sm:w-3 h-5 sm:h-6 bg-primary animate-pulse" />
           </div>
           
-          <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{
-          animationDelay: "0.4s"
-        }}>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.4s" }}>
             I build secure, intelligent systems and develop cutting-edge solutions 
             at the intersection of software engineering, cybersecurity, and artificial intelligence.
           </p>
           
-          <div className="flex items-center gap-6 pt-4 animate-fade-up" style={{
-          animationDelay: "0.5s"
-        }}>
-            <button onClick={scrollToAbout} className="group flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-mono text-sm font-medium transition-all duration-300 hover:glow-sm hover:scale-105">
-              Explore My Work
-              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-            </button>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <button 
+                onClick={scrollToAbout} 
+                className="group flex items-center gap-2 bg-primary text-primary-foreground px-4 sm:px-6 py-2.5 sm:py-3 font-mono text-xs sm:text-sm font-medium transition-all duration-300 hover:glow-sm hover:scale-105"
+              >
+                Explore My Work
+                <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              </button>
+              
+              <a 
+                href="/resume.pdf" 
+                download="YourName_Resume.pdf" 
+                className="group flex items-center gap-2 border border-primary text-primary px-4 sm:px-6 py-2.5 sm:py-3 font-mono text-xs sm:text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:glow-sm"
+              >
+                <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                Resume
+              </a>
+            </div>
             
-            <a href="/resume.pdf" download="YourName_Resume.pdf" className="group flex items-center gap-2 border border-primary text-primary px-6 py-3 font-mono text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:glow-sm">
-              <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-              Resume
-            </a>
-            
-            <div className="flex items-center gap-4">
-              {[{
-              icon: Github,
-              href: "#",
-              label: "GitHub"
-            }, {
-              icon: Linkedin,
-              href: "#",
-              label: "LinkedIn"
-            }, {
-              icon: Mail,
-              href: "#contact",
-              label: "Email"
-            }].map(social => <a key={social.label} href={social.href} aria-label={social.label} className="p-2 text-muted-foreground hover:text-primary transition-colors border border-transparent hover:border-primary/30 rounded">
+            <div className="flex items-center gap-3 sm:gap-4 mt-2 sm:mt-0">
+              {[
+                { icon: Github, href: "#", label: "GitHub" },
+                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                { icon: Mail, href: "#contact", label: "Email" },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="p-2 text-muted-foreground hover:text-primary transition-colors border border-transparent hover:border-primary/30 rounded"
+                >
                   <social.icon className="w-5 h-5" />
-                </a>)}
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      {/* Scroll indicator - hidden on small screens */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block">
         <div className="w-5 h-8 border border-muted-foreground/30 rounded-full flex items-start justify-center p-1.5">
           <div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

@@ -24,20 +24,20 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-32 px-6 relative">
+    <section id="achievements" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative">
       <div className="container mx-auto max-w-5xl">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="font-mono text-primary">02.</span>
-          <h2 className="text-3xl md:text-4xl font-bold">Achievements</h2>
-          <div className="flex-1 h-px bg-border" />
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+          <span className="font-mono text-primary text-sm sm:text-base">05.</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Achievements</h2>
+          <div className="flex-1 h-px bg-border hidden sm:block" />
         </div>
 
         {/* Main Achievements */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {achievements.map((achievement) => (
             <div
               key={achievement.title}
-              className={`group relative p-6 border rounded-lg transition-all duration-300 ${
+              className={`group relative p-4 sm:p-6 border rounded-lg transition-all duration-300 ${
                 achievement.highlight
                   ? "border-primary/50 bg-primary/5"
                   : "border-border hover:border-primary/30 bg-card"
@@ -46,16 +46,16 @@ const Achievements = () => {
               {achievement.highlight && (
                 <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
               )}
-              <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-lg ${achievement.highlight ? "bg-primary/20" : "bg-primary/10"} group-hover:bg-primary/20 transition-colors`}>
-                  <achievement.icon className={`w-6 h-6 ${achievement.highlight ? "text-primary" : "text-primary/80"}`} />
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className={`p-2 sm:p-3 rounded-lg flex-shrink-0 ${achievement.highlight ? "bg-primary/20" : "bg-primary/10"} group-hover:bg-primary/20 transition-colors`}>
+                  <achievement.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${achievement.highlight ? "text-primary" : "text-primary/80"}`} />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <span className="text-xs font-mono text-primary/70 uppercase tracking-wider">
                     {achievement.category}
                   </span>
-                  <h3 className="text-lg font-semibold mt-1 mb-2">{achievement.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-base sm:text-lg font-semibold mt-1 mb-2">{achievement.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {achievement.description}
                   </p>
                 </div>
@@ -68,20 +68,20 @@ const Achievements = () => {
         </div>
 
         {/* Certifications */}
-        <div className="border border-border rounded-lg p-6 bg-card">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="border border-border rounded-lg p-4 sm:p-6 bg-card">
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
             <BadgeCheck className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold">Professional Certifications</h3>
+            <h3 className="font-semibold text-sm sm:text-base">Professional Certifications</h3>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {certifications.map((cert) => (
               <div
                 key={cert.name}
-                className="flex items-center gap-3 p-4 border border-border/50 rounded-lg hover:border-primary/30 transition-colors bg-background/50"
+                className="flex items-center gap-3 p-3 sm:p-4 border border-border/50 rounded-lg hover:border-primary/30 transition-colors bg-background/50"
               >
                 <Award className="w-5 h-5 text-primary/70 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-sm">{cert.name}</p>
+                <div className="min-w-0">
+                  <p className="font-medium text-xs sm:text-sm truncate">{cert.name}</p>
                   <p className="text-xs text-muted-foreground">{cert.issuer}</p>
                 </div>
               </div>
