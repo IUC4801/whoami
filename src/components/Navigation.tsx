@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
-import { Terminal, Menu, X } from "lucide-react";
+import { Terminal, Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -69,6 +76,15 @@ const Navigation = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
             </button>
           ))}
+          
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 text-muted-foreground hover:text-primary transition-colors rounded border border-transparent hover:border-primary/30"
+            aria-label="Toggle theme"
+          >
+            {mounted && (theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />)}
+          </button>
         </div>
 
         <a
@@ -106,6 +122,16 @@ const Navigation = () => {
               {item}
             </button>
           ))}
+          
+          {/* Theme Toggle - Mobile */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-3 text-muted-foreground hover:text-primary transition-colors rounded border border-border hover:border-primary/30"
+            aria-label="Toggle theme"
+          >
+            {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
+          </button>
+          
           <a
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
