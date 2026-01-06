@@ -1,4 +1,5 @@
 import { Award, FileText, BadgeCheck, Trophy } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
 
 const Achievements = () => {
   const achievements = [
@@ -24,6 +25,7 @@ const Achievements = () => {
   ];
 
   return (
+    <AnimatedSection>
     <section id="achievements" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative">
       <div className="container mx-auto max-w-5xl">
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -90,6 +92,7 @@ const Achievements = () => {
         </div>
       </div>
     </section>
+    </AnimatedSection>
   );
 };
 

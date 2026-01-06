@@ -1,3 +1,5 @@
+import AnimatedSection from "./AnimatedSection";
+
 const skillCategories = [
   {
     title: "Languages",
@@ -27,6 +29,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
+    <AnimatedSection>
     <section id="skills" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-secondary/20">
       <div className="container mx-auto max-w-5xl">
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -62,6 +65,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
+    </AnimatedSection>
   );
 };
 

@@ -1,7 +1,9 @@
 import { Shield, Brain, Code2 } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
 
 const About = () => {
   return (
+    <AnimatedSection>
     <section id="about" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -55,6 +57,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </AnimatedSection>
   );
 };
 

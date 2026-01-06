@@ -1,7 +1,9 @@
 import { Mail, Send, MapPin, Terminal } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
 
 const Contact = () => {
   return (
+    <AnimatedSection>
     <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6">
       <div className="container mx-auto max-w-3xl text-center">
         <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -64,6 +66,7 @@ const Contact = () => {
         </a>
       </div>
     </section>
+    </AnimatedSection>
   );
 };
 

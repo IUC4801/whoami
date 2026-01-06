@@ -1,5 +1,6 @@
 import { ArrowDown, Github, Linkedin, Mail, FileDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -33,27 +34,52 @@ const Hero = () => {
 
       <div className="container mx-auto max-w-5xl z-10">
         <div className="space-y-4 sm:space-y-6">
-          <p className="font-mono text-primary text-sm sm:text-base animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-mono text-primary text-sm sm:text-base"
+          >
             Hello, World! I'm
-          </p>
+          </motion.p>
           
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
+          >
             <span className="text-foreground">Ayushi Chaudhuri</span>
-          </h1>
+          </motion.h1>
           
-          <div className="flex items-center gap-2 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex items-center gap-2"
+          >
             <span className="font-mono text-base sm:text-xl md:text-2xl text-muted-foreground">
               {displayText}
             </span>
             <span className="w-2 sm:w-3 h-5 sm:h-6 bg-primary animate-pulse" />
-          </div>
+          </motion.div>
           
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
+          >
             I build secure, intelligent systems and develop cutting-edge solutions 
             at the intersection of software engineering, cybersecurity, and artificial intelligence.
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-4"
+          >
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <button 
                 onClick={scrollToAbout} 
@@ -89,7 +115,7 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
