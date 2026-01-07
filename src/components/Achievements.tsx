@@ -69,13 +69,15 @@ const Achievements = () => {
             {certifications.map((cert) => (
               <div
                 key={cert.name}
-                className="flex items-center gap-3 p-3 sm:p-4 border border-border/50 rounded-lg hover:border-primary/30 transition-colors bg-background/50"
+                className="group relative flex items-center gap-3 p-3 sm:p-4 border border-border/50 rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 bg-background/50"
               >
-                <Award className="w-5 h-5 text-primary/70 flex-shrink-0" />
+                <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Award className="w-5 h-5 text-primary/70 group-hover:text-primary flex-shrink-0 transition-colors duration-300" />
                 <div className="min-w-0">
                   <p className="font-medium text-xs sm:text-sm truncate">{cert.name}</p>
                   <p className="text-xs text-muted-foreground">{cert.issuer}</p>
                 </div>
+                <div className="absolute -bottom-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
