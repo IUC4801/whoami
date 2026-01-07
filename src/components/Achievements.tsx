@@ -8,14 +8,12 @@ const Achievements = () => {
       category: "Academic Excellence",
       title: "Gold Medalist",
       description: "Branch Topper in B.Tech CSE with specialization in Cybersecurity & Digital Forensics",
-      highlight: true,
     },
     {
       icon: FileText,
       category: "Research",
       title: "Published Research Paper",
       description: "Android Malware Detection and Prevention using Machine Learning techniques",
-      highlight: false,
     },
   ];
 
@@ -39,18 +37,12 @@ const Achievements = () => {
           {achievements.map((achievement) => (
             <div
               key={achievement.title}
-              className={`group relative p-4 sm:p-6 border rounded-lg transition-all duration-300 ${
-                achievement.highlight
-                  ? "border-primary/50 bg-primary/5"
-                  : "border-border hover:border-primary/30 bg-card"
-              }`}
+              className="group relative p-4 sm:p-6 border rounded-lg transition-all duration-300 border-border hover:border-primary/50 hover:bg-primary/5 bg-card"
             >
-              {achievement.highlight && (
-                <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
-              )}
+              <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className={`p-2 sm:p-3 rounded-lg flex-shrink-0 ${achievement.highlight ? "bg-primary/20" : "bg-primary/10"} group-hover:bg-primary/20 transition-colors`}>
-                  <achievement.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${achievement.highlight ? "text-primary" : "text-primary/80"}`} />
+                <div className="p-2 sm:p-3 rounded-lg flex-shrink-0 bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <achievement.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary/80 group-hover:text-primary transition-colors" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="text-xs font-mono text-primary/70 uppercase tracking-wider">
@@ -62,9 +54,7 @@ const Achievements = () => {
                   </p>
                 </div>
               </div>
-              {achievement.highlight && (
-                <div className="absolute -bottom-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
-              )}
+              <div className="absolute -bottom-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>
