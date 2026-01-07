@@ -46,7 +46,7 @@ const Navigation = () => {
     setMobileMenuOpen(false);
   };
 
-  const navItems = ["About", "Skills", "Experience", "Projects", "Achievements", "Contact"];
+  const navItems = ["About", "Skills", "Experience", "Projects", "Achievements", "Get In Touch"];
 
   return (
     <nav
@@ -87,12 +87,6 @@ const Navigation = () => {
           </button>
         </div>
 
-        <a
-          href="#contact"
-          className="hidden md:block font-mono text-sm px-4 py-2 border border-primary text-primary hover:bg-primary/10 transition-colors rounded"
-        >
-          Get in Touch
-        </a>
 
         {/* Mobile Menu Button */}
         <button
@@ -132,13 +126,6 @@ const Navigation = () => {
             {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
           </button>
           
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-4 font-mono text-sm px-6 py-3 border border-primary text-primary hover:bg-primary/10 transition-colors rounded"
-          >
-            Get in Touch
-          </a>
         </div>
       </div>
     </nav>

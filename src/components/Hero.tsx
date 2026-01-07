@@ -93,7 +93,8 @@ const Hero = () => {
               
               <a 
                 href="https://drive.google.com/file/d/1pPinzs7001aeWXPGFvRnHSkU7LkoUT31/view?usp=sharing" 
-                download="Ayushi_Chaudhuri_Resume.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-2 border border-primary text-primary px-4 sm:px-6 py-2.5 sm:py-3 font-mono text-xs sm:text-sm font-medium transition-all duration-300 hover:bg-primary/10 hover:glow-sm rounded"
               >
                 <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
@@ -103,14 +104,15 @@ const Hero = () => {
             
             <div className="flex items-center gap-3 sm:gap-4 mt-2 sm:mt-0">
               {[
-                { icon: Github, href: "https://github.com/IUC4801", label: "GitHub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/ayushichaudhuri/", label: "LinkedIn" },
-                { icon: Mail, href: "#contact", label: "Email" },
+                { icon: Github, href: "https://github.com/IUC4801", label: "GitHub", external: true },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/ayushichaudhuri/", label: "LinkedIn", external: true },
+                { icon: Mail, href: "#contact", label: "Email", external: false },
               ].map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  {...(social.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="p-2 text-muted-foreground hover:text-primary transition-colors border border-transparent hover:border-primary/30 rounded"
                 >
                   <social.icon className="w-5 h-5" />

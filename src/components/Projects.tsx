@@ -1,13 +1,14 @@
 import { ExternalLink, Github, Folder } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
+// Featured projects - set github/live to undefined or remove to hide the link
 const featuredProjects = [
   {
     title: "AI Threat Detection System",
     description: "Real-time security monitoring platform using machine learning to detect and classify network threats. Reduced false positives by 40% using custom-trained anomaly detection models.",
     tags: ["Python", "TensorFlow", "Kafka", "Elasticsearch"],
-    github: "#",
-    live: "#",
+    github: undefined, // No GitHub link
+    live: undefined, // No live link
   },
   {
     title: "Scanax",
@@ -16,18 +17,12 @@ const featuredProjects = [
     github: "https://github.com/IUC4801/Scanax",
     live: "https://marketplace.visualstudio.com/items?itemName=AyushiChaudhuri.scanax",
   },
-  // {
-  //   title: "Privacy-Preserving ML Framework",
-  //   description: "Framework for training machine learning models on encrypted data using homomorphic encryption. Enables secure collaborative learning without exposing sensitive data.",
-  //   tags: ["Rust", "PyTorch", "Cryptography", "WebAssembly"],
-  //   github: "#",
-  //   live: "#",
-  // },
   {
     title: "Smart Pocket",
     description: "A decentralized Ethereum wallet application for on-chain token transfers via Ethereum smart contracts with MetaMask-based signing and transaction traceability.",
     tags: ["Reactjs", "Web3js", "Solidity", "Openzepplin", "Metamask"],
-    github: "https://github.com/IUC4801/Smart-Pocket"
+    github: "https://github.com/IUC4801/Smart-Pocket",
+    live: undefined, // No live link
   },
 ];
 
@@ -83,12 +78,16 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a href={project.github} className="text-foreground hover:text-primary transition-colors">
-                    <Github className="w-5 h-5" />
-                  </a>
-                  <a href={project.live} className="text-foreground hover:text-primary transition-colors">
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -123,12 +122,16 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className={`flex gap-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                    <a href={project.github} className="text-foreground hover:text-primary transition-colors">
-                      <Github className="w-5 h-5" />
-                    </a>
-                    <a href={project.live} className="text-foreground hover:text-primary transition-colors">
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
