@@ -6,10 +6,7 @@ const Contact = () => {
     <AnimatedSection>
     <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-3xl text-center">
-        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <span className="font-mono text-primary text-sm sm:text-base">06.</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Get In Touch</h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">Get In Touch</h2>
 
         <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-8 sm:mb-12 leading-relaxed px-2">
           Open to security research collaborations, engineering roles, CTFs and interesting technical challenges. 
