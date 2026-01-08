@@ -4,7 +4,8 @@ Modern portfolio website built with React, TypeScript, and Tailwind CSS.
 
 ## Tech Stack
 
-- React 18 with TypeScript
+- Reactjs
+- TypeScript
 - Vite
 - Tailwind CSS with shadcn-ui
 - Framer Motion
@@ -16,7 +17,9 @@ Modern portfolio website built with React, TypeScript, and Tailwind CSS.
 
 ### Prerequisites
 
+```
 Node.js v18 or higher
+```
 
 ### Installation
 
@@ -54,8 +57,3 @@ Content can be updated in:
 - `src/data/experience.ts` - Work experience
 - `src/data/skills.ts` - Technical skills
 - `src/data/achievements.ts` - Achievements and certifications
-
-
-## License
-
-Copyright 2026 Ayushi Chaudhuri. All rights reserved.
