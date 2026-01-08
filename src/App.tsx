@@ -17,7 +17,7 @@ const App = () => (
         <ErrorBoundary>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename="/PortfolioWebsite">
             <Routes>
               <Route path="/" element={<Index />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
