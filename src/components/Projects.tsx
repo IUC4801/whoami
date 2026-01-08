@@ -28,10 +28,10 @@ const featuredProjects = [
 
 // Other projects - set github/live to undefined or remove to hide the link
 const otherProjects = [
-  { title: "Flaky Network Simulator", desc: "Command line tool for simulating network conditions", tags: ["Python", "C++"], github: undefined, live: undefined },
-  { title: "CVE Dashboard", desc: "Real-time vulnerability tracker", tags: ["React", "API"], github: undefined, live: undefined },
-  { title: "LLM Security Suite", desc: "Prompt injection detector", tags: ["Python", "LLM"], github: undefined, live: undefined },
-  { title: "Container Scanner", desc: "Docker image vulnerability scanner", tags: ["Go", "Trivy"], github: undefined, live: undefined },
+  { title: "Flaky Network Simulator", desc: "Command line tool for simulating network conditions", tags: ["Python", "C++", "jenkins"], github: "https://github.com/adobe/python-flaky-network", live: undefined },
+  { title: "Dynamic Fusion", desc: "Logistic Regression and Dynamic Feature selection based Android Malware detection approach", tags: ["Python", "ML"], github: "https://github.com/IUC4801/DynamicFusion", live: undefined },
+  { title: "Aegis", desc: "Python Library for LLM Injection Tracking", tags: ["Python", "FastAPI", "LLM"], github: "https://github.com/IUC4801/Aegis", live: undefined },
+  { title: "Zero Day", desc: "Real-time vulnerability tracker and CVE Dashboard", tags: ["React", "Nodejs", "API"], github: "https://github.com/IUC4801/ZeroDay", live: undefined },
 ];
 
 const Projects = () => {

@@ -52,8 +52,8 @@ const Contact = () => {
             <div className="pl-4 space-y-1">
               <p className="flex items-center gap-2 flex-wrap">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:hello@example.com" className="text-foreground hover:text-primary transition-colors break-all">
-                  hello@example.com
+                <a href="mailto:ayushichaudhuri50@gmail.com" className="text-foreground hover:text-primary transition-colors break-all">
+                  ayushichaudhuri50@gmail.com
                 </a>
               </p>
               <p className="flex items-center gap-2">
